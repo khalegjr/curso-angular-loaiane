@@ -9,6 +9,9 @@ export class DataBindingComponent {
   url: string = "http://loaiane.com";
   cursoAngular: boolean = true;
   urlImagem: string = "https://picsum.photos/400/200";
+  valorAtual: string = "";
+  valorSalvo: string = "";
+  valorSalvoComVariavelLocal: string = "";
 
   getValor() {
     return 1;
@@ -16,5 +19,21 @@ export class DataBindingComponent {
 
   getCurtirCurso() {
     return true;
+  }
+
+  botaoClicado() {
+    alert("Botão clicado!");
+  }
+
+  onKeyUp(evento: KeyboardEvent) {
+    this.valorAtual = (<HTMLInputElement>evento.target).value;
+  }
+
+  salvarValor(valor: Event) {
+    this.valorSalvo = (valor.target as HTMLInputElement).value;
+  }
+
+  salvarValorComVariavelLocal(valor: HTMLInputElement) {
+    this.valorSalvoComVariavelLocal = valor.value;
   }
 }

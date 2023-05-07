@@ -1,5 +1,5 @@
-<section class="property-binding">
-  <!-- <article>
+<!-- <section class="property-binding"> -->
+<!-- <article>
     <h3>Interpolation / Interpolação</h3>
     <p>String renderizada com interpolação: {{ url }}</p>
     <p>Resultado de 1 + 1 com interpolação: {{ 1 + 1 }}</p>
@@ -20,7 +20,7 @@
     <img bind-src="urlImagem" />
   </article> -->
 
-  <article>
+<!-- <article>
     <h3>Class e Style Binding</h3>
     <div>
       Selecione uma classe
@@ -73,6 +73,33 @@
       >
         Esse texto só aparece em caso de Danger selecionado.
       </div>
+    </div>
+  </article>
+</section> -->
+
+<section class="event-binding">
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button class="btn btn-primary" (click)="botaoClicado()">
+        Me clique!
+      </button>
+
+      <br /><br />
+
+      <input
+        #campoInput
+        type="text"
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvarValorComVariavelLocal(campoInput)"
+        (blur)="salvarValorComVariavelLocal(campoInput)"
+        (keyup.enter)="salvarValor($event)"
+        (blur)="salvarValor($event)"
+      />
+
+      <p>Valor atual: {{ valorAtual }}</p>
+      <p>Valor salvo com variável local: {{ valorSalvoComVariavelLocal }}</p>
+      <p>Valor salvo: {{ valorSalvo }}</p>
     </div>
   </article>
 </section>
