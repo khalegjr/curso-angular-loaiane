@@ -77,7 +77,7 @@
   </article>
 </section> -->
 
-<section class="event-binding">
+<!-- <section class="event-binding">
   <article>
     <h3>Event binding</h3>
     <div>
@@ -100,6 +100,30 @@
       <p>Valor atual: {{ valorAtual }}</p>
       <p>Valor salvo com variável local: {{ valorSalvoComVariavelLocal }}</p>
       <p>Valor salvo: {{ valorSalvo }}</p>
+    </div>
+  </article>
+</section> -->
+
+<section class="two-way-binding">
+  <article>
+    <h3>Two-way data binding</h3>
+    <div>
+      <!-- <input
+        #nomeInput
+        type="text"
+        [value]="nome"
+        (input)="nome = nomeInput.value"
+      /> -->
+
+      <input type="text" name="nome" [(ngModel)]="nome" />
+
+      <p>Você digitou o nome: {{ nome }}</p>
+    </div>
+
+    <div>
+      <p>Mey nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos.</p>
+      <input type="text" [(ngModel)]="pessoa.nome" />
+      <input type="text" [(ngModel)]="pessoa.idade" />
     </div>
   </article>
 </section>
