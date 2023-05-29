@@ -6,21 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./data-binding.component.scss'],
 })
 export class DataBindingComponent {
-  url: string = 'http://loaiane.com';
-  cursoAngular: boolean = true;
-  urlImagem: string = 'https://picsum.photos/400/200';
-  valorAtual: string = '';
-  valorSalvo: string = '';
-  valorSalvoComVariavelLocal: string = '';
+  url = 'http://loaiane.com';
+  cursoAngular = true;
+  urlImagem = 'https://picsum.photos/400/200';
+  valorAtual = '';
+  valorSalvo = '';
+  valorSalvoComVariavelLocal = '';
 
-  nome: string = 'abc';
+  nome = 'abc';
 
   pessoa: any = {
     nome: 'def',
     idade: 20,
   };
 
-  nomeDoCurso: string = 'Angular';
+  nomeDoCurso = 'Angular';
   valorInicial = 15;
 
   getValor() {
