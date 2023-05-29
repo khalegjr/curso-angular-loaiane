@@ -21,6 +21,7 @@ export class DataBindingComponent {
   };
 
   nomeDoCurso: string = 'Angular';
+  valorInicial = 15;
 
   getValor() {
     return 1;
@@ -44,5 +45,9 @@ export class DataBindingComponent {
 
   salvarValorComVariavelLocal(valor: HTMLInputElement) {
     this.valorSalvoComVariavelLocal = valor.value;
+  }
+
+  onMudouValor(evento: any) {
+    console.log(evento.novoValor);
   }
 }
