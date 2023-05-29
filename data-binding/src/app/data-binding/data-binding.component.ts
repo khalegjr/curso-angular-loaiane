@@ -1,24 +1,26 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "app-data-binding",
-  templateUrl: "./data-binding.component.html",
-  styleUrls: ["./data-binding.component.scss"],
+  selector: 'app-data-binding',
+  templateUrl: './data-binding.component.html',
+  styleUrls: ['./data-binding.component.scss'],
 })
 export class DataBindingComponent {
-  url: string = "http://loaiane.com";
+  url: string = 'http://loaiane.com';
   cursoAngular: boolean = true;
-  urlImagem: string = "https://picsum.photos/400/200";
-  valorAtual: string = "";
-  valorSalvo: string = "";
-  valorSalvoComVariavelLocal: string = "";
+  urlImagem: string = 'https://picsum.photos/400/200';
+  valorAtual: string = '';
+  valorSalvo: string = '';
+  valorSalvoComVariavelLocal: string = '';
 
-  nome: string = "abc";
+  nome: string = 'abc';
 
   pessoa: any = {
-    nome: "def",
+    nome: 'def',
     idade: 20,
   };
+
+  nomeDoCurso: string = 'Angular';
 
   getValor() {
     return 1;
@@ -29,7 +31,7 @@ export class DataBindingComponent {
   }
 
   botaoClicado() {
-    alert("Botão clicado!");
+    alert('Botão clicado!');
   }
 
   onKeyUp(evento: KeyboardEvent) {
