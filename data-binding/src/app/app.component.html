@@ -1,4 +1,13 @@
-<app-data-binding></app-data-binding>
+<!-- <app-data-binding></app-data-binding> -->
 <!-- <app-ciclo [valorInicial]="valor" *ngIf="!deletarCiclo"></app-ciclo>
 <button (click)="mudarValor()">Mudar Valor</button>
 <button (click)="destruirCiclo()">Deletar</button> -->
+<app-exemplo-ng-content>
+  Conteúdo passado para o componente
+  <button (click)="destruirCiclo()">Deletar</button>
+</app-exemplo-ng-content>
+
+<app-exemplo-ng-content>
+  Conteúdo passado para o componente
+  <div class="titulo">Título</div>
+</app-exemplo-ng-content>
