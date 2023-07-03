@@ -12,9 +12,10 @@ import { CicloComponent } from './ciclo/ciclo.component';
 import { ExemploNgContentComponent } from './exemplo-ng-content/exemplo-ng-content.component';
 import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
 import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretivas-customizadas.component';
+import { HighlightMouseDirective } from './shared/highlight-mouse.directive';
 
 @NgModule({
-  declarations: [AppComponent, DataBindingComponent, InputPropertyComponent, OutputPropertyComponent, CicloComponent, ExemploNgContentComponent, FundoAmareloDirective, DiretivasCustomizadasComponent],
+  declarations: [AppComponent, DataBindingComponent, InputPropertyComponent, OutputPropertyComponent, CicloComponent, ExemploNgContentComponent, FundoAmareloDirective, DiretivasCustomizadasComponent, HighlightMouseDirective],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
