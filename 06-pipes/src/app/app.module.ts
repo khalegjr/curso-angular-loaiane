@@ -10,6 +10,7 @@ import { CamelCasePipe } from './camel-case.pipe';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { FiltroArrayPipe } from './filtro-array.pipe';
 import { SettingsService } from './settings.service';
+import { FiltroArrayImpurroPipe } from './filtro-array-impurro.pipe';
 
 registerLocaleData(localePT);
 
@@ -19,6 +20,7 @@ registerLocaleData(localePT);
     ExemplosPipesComponent,
     CamelCasePipe,
     FiltroArrayPipe,
+    FiltroArrayImpurroPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
