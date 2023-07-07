@@ -14,5 +14,8 @@ export class CursosComponent implements OnInit {
 
   ngOnInit(): void {
     this.cursos = this.cursosService.getCursos();
+
+    // utilizando atributo estático para comunicação entre instâncias
+    CursosService.criouNovoCurso.subscribe((curso) => this.cursos.push(curso));
   }
 }
