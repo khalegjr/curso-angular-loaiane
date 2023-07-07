@@ -26,3 +26,9 @@
 <ul>
   <li *ngFor="let item of livros | filtroArrayImpurro : filtro">{{ item }}</li>
 </ul>
+
+<h5>Maneira correta de utilizar filtro nos projetos</h5>
+
+<ul>
+  <li *ngFor="let item of obterCursos()">{{ item }}</li>
+</ul>
