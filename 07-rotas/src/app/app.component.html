@@ -5,6 +5,9 @@
       <ul class="nav__links">
         <li routerLinkActive="is-active"><a routerLink="/login">Login</a></li>
         <li routerLinkActive="is-active"><a routerLink="/cursos">Cursos</a></li>
+        <li routerLinkActive="is-active">
+          <a [routerLink]="['cursos', idCurso.value]">Curso com ID</a>
+        </li>
       </ul>
     </nav>
     <!-- <span class="example-spacer"></span> -->
@@ -28,5 +31,7 @@
 </header>
 
 <div class="content" role="main">
+  <p>Entre com o id do curso</p>
+  <input matInput #idCurso type="text" />
   <router-outlet></router-outlet>
 </div>
