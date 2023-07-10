@@ -4,7 +4,9 @@
     <nav>
       <ul class="nav__links">
         <li routerLinkActive="is-active"><a routerLink="/login">Login</a></li>
-        <li routerLinkActive="is-active"><a routerLink="/cursos">Cursos</a></li>
+        <li routerLinkActive="is-active">
+          <a routerLink="/cursos" [queryParams]="{ pagina: 1 }">Cursos</a>
+        </li>
         <li routerLinkActive="is-active">
           <a [routerLink]="['cursos', idCurso.value]">Curso com ID</a>
         </li>
