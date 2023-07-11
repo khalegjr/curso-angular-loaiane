@@ -9,22 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
-import { CursosComponent } from './cursos/cursos.component';
-import { CursosService } from './cursos/cursos.service';
+import { CursosModule } from './cursos/cursos.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    LoginComponent,
-    CursosComponent,
-    CursoDetalheComponent,
-    CursoNaoEncontradoComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,8 +24,9 @@ import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-en
     MatButtonModule,
     MatInputModule,
     MatListModule,
+    CursosModule,
   ],
-  providers: [CursosService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
