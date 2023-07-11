@@ -6,16 +6,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 import { CursosComponent } from './cursos.component';
+import { CursosRoutingModule } from './cursos.routing.module';
 import { CursosService } from './cursos.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
+    CursosRoutingModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
