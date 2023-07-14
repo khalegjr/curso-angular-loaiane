@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 const routes: Routes = [
   {
@@ -18,8 +19,14 @@ const routes: Routes = [
       import('./alunos/alunos.module').then((m) => m.AlunosModule),
     canActivate: [authGuard()],
   },
-  { path: '', component: HomeComponent, canActivate: [authGuard()] },
   { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent, canActivate: [authGuard()] },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: '**',
+    component: PaginaNaoEncontradaComponent,
+    canActivate: [authGuard],
+  },
 ];
 
 @NgModule({
