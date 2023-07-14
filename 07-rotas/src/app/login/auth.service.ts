@@ -12,7 +12,7 @@ export class AuthService {
 
   constructor(private router: Router) {}
 
-  fazerLogin(usuario: Usuario) {
+  fazerLogin(usuario: Usuario): void {
     if (usuario.nome === 'teste' && usuario.senha === 'teste') {
       this.usuarioAutenticado = true;
 
@@ -23,5 +23,9 @@ export class AuthService {
       this.usuarioAutenticado = false;
       this.mostrarMenuEmitter.emit(false);
     }
+  }
+
+  usuarioEstaAutenticado(): boolean {
+    return this.usuarioAutenticado;
   }
 }
