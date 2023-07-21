@@ -13,7 +13,9 @@ export class UnsubscribePocComponent implements OnInit {
 
   ngOnInit() {}
 
-  emitirValor(valor: string) {}
+  emitirValor(valor: string) {
+    this.service.emitirValor(valor);
+  }
 
   destruirComponentes() {
     this.mostrarComponentes = !this.mostrarComponentes;
