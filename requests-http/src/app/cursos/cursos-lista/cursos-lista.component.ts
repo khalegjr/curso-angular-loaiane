@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { EMPTY, Observable, Subject, catchError } from 'rxjs';
 import { Curso } from '../curso';
 import { CursosService } from '../cursos.service';
 
@@ -47,10 +47,30 @@ export class CursosListaComponent implements OnInit {
 
   cursos!: Curso[];
   cursos$!: Observable<Curso[]>;
+  error$ = new Subject<boolean>();
 
   constructor(private service: CursosService) {}
 
   ngOnInit(): void {
-    this.cursos$ = this.service.list();
+    this.onRefresh();
+  }
+
+  onRefresh() {
+    this.cursos$ = this.service.list().pipe(
+      catchError((error) => {
+        console.error(error);
+        this.error$.next(true);
+        return EMPTY;
+      })
+    );
+
+    /** outra forma de capturar um erro, com subscribe */
+    // this.service.list().subscribe(
+    //   (dados) => {
+    //     console.log(dados);
+    //   },
+    //   (error) => console.error(error),
+    //   () => console.log('Obaservable completo!')
+    // );
   }
 }
