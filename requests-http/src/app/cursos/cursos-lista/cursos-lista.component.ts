@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EMPTY, Observable, Subject, catchError } from 'rxjs';
-import { AlertModalComponent } from 'src/app/shared/alert-modal/alert-modal.component';
+import { AlertModalService } from 'src/app/shared/alert-modal.service';
 import { Curso } from '../curso';
 import { CursosService } from '../cursos.service';
 
@@ -15,7 +15,11 @@ export class CursosListaComponent implements OnInit {
   cursos$!: Observable<Curso[]>;
   error$ = new Subject<boolean>();
 
-  constructor(private service: CursosService, private modalService: NgbModal) {}
+  constructor(
+    private service: CursosService,
+    private modalService: NgbModal,
+    private alertService: AlertModalService
+  ) {}
 
   ngOnInit(): void {
     this.onRefresh();
@@ -42,9 +46,13 @@ export class CursosListaComponent implements OnInit {
   }
 
   handleError() {
-    const modalRef = this.modalService.open(AlertModalComponent);
-    modalRef.componentInstance.message =
-      'Erro ao carregar cursos. Tente novamente mais tarde';
-    modalRef.componentInstance.type = 'danger';
+    // const modalRef = this.modalService.open(AlertModalComponent);
+    // modalRef.componentInstance.message =
+    //   'Erro ao carregar cursos. Tente novamente mais tarde';
+    // modalRef.componentInstance.type = 'danger';
+
+    this.alertService.showAlertDanger(
+      'Erro ao carregar cursos. Tente novamente mais tarde'
+    );
   }
 }
